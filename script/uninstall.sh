@@ -3,7 +3,8 @@ set -e
 
 BIN_LINK="$HOME/.local/bin/via"
 DESKTOP_FILE="$HOME/.local/share/applications/vIA.desktop"
-CONFIG_DIR="$HOME/.config/via"
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/via"
+CONFIG_LEGADO="$HOME/.config/assistente"
 
 echo "=== A desinstalar o vIA ==="
 
@@ -24,16 +25,21 @@ else
 fi
 
 # 3. Perguntar se pretende apagar as configurações e lista de scripts
-if [ -d "$CONFIG_DIR" ]; then
-    echo ""
-    read -r -p "Desejas também apagar as configurações e scripts registados em $CONFIG_DIR? [s/N]: " resp
-    if [[ "$resp" =~ ^[sS]$ ]]; then
-        rm -rf "$CONFIG_DIR"
-        echo "[OK] Configurações removidas ($CONFIG_DIR)."
-    else
-        echo "[OK] Configurações mantidas em $CONFIG_DIR."
+for DIR_CONFIG in "$CONFIG_DIR" "$CONFIG_LEGADO"; do
+    if [ -d "$DIR_CONFIG" ]; then
+        echo ""
+        read -r -p "Apagar configurações e scripts em $DIR_CONFIG? [s/N]: " resp || resp="n"
+        case "$resp" in
+            [sS])
+                rm -rf "$DIR_CONFIG"
+                echo "[OK] Removido $DIR_CONFIG"
+                ;;
+            *)
+                echo "[OK] Mantido $DIR_CONFIG"
+                ;;
+        esac
     fi
-fi
+done
 
 echo ""
 echo "Desinstalação concluída. A pasta do código-fonte não foi alterada."

@@ -1,1 +1,5 @@
+# Dependências do vIA
 PySide6>=6.5.0
+
+# Opcional: extração de texto de PDFs quando o poppler-utils (pdftotext) não está instalado.
+pypdf>=4.0.0

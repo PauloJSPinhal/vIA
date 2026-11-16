@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-exec python3 "$(dirname "$(readlink -f "$0")")/src/via.py" "$@"
+exec python3 "$(dirname "$(readlink -f "$0")")/src/main.py" "$@"

@@ -27,8 +27,14 @@ config.json
 *.log
 *.tmp
 *.bak
+*.invalido
 .DS_Store
 Thumbs.db
+
+# Ferramentas de desenvolvimento
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # Empacotamento / Distribuição (PyInstaller, wheels, etc.)
 build/

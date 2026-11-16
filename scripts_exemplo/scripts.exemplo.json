@@ -1,0 +1,20 @@
+{
+    "audio-reset": {
+        "caminho": "/caminho/para/Audio-Reset/audio-reset.sh",
+        "descricao": "Reinicia o servidor de som (WirePlumber/PipeWire) quando o áudio encrava.",
+        "args": false,
+        "perigoso": false
+    },
+    "backup-pasta": {
+        "caminho": "/caminho/para/backup.sh",
+        "descricao": "Cria uma cópia de segurança de uma pasta. Recebe o caminho da pasta como argumento.",
+        "args": true,
+        "perigoso": false
+    },
+    "formatar-disco": {
+        "caminho": "/caminho/para/formatar.sh",
+        "descricao": "Formata um dispositivo (ex: /dev/sdb1). ATENÇÃO: apaga todos os dados do dispositivo.",
+        "args": true,
+        "perigoso": true
+    }
+}
