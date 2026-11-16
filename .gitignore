@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Configurações locais e chaves (caso sejam criadas na pasta do projeto)
+config/
+scripts.json
+config.json
+.env
+*.key
+
+# IDEs e editores (VS Code, PyCharm, etc.)
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs e ficheiros temporários
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Empacotamento / Distribuição (PyInstaller, wheels, etc.)
+build/
+dist/
+*.egg-info/
+*.spec
